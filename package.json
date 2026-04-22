@@ -13,10 +13,11 @@
     "nodemon": "^3.1.14"
   },
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server.js\"",
-    "build": "vite build",
+    "dev": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "npm preview",
     "start": "node server.js"
   },
   "dependencies": {
