@@ -10,23 +10,37 @@
     "@babel/preset-env": "^7.27.2",
     "babel-loader": "^8.4.1",
     "concurrently": "^9.1.2",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.14"
   },
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server.js\"",
-    "build": "vite build",
+    "dev": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "npm preview",
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
     "compression": "^1.8.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "global": "^4.4.0",
     "helmet": "^8.1.0",
-    "mongoose": "^8.23.0"
-  }
+    "http-errors": "^2.0.1",
+    "mongoose": "^8.23.0",
+    "morgan": "^1.10.1"
+  },
+  "description": "backend",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Centennial-Colleg/Backend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Centennial-Colleg/Backend/issues"
+  },
+  "homepage": "https://github.com/Centennial-Colleg/Backend#readme"
 }
