@@ -5,6 +5,7 @@ import morgan from "morgan";
 import createError from "http-errors";
 import dotenv from "dotenv";
 
+import authRoutes from "./routes/authRoutes.js";
 import referenceRoutes from "./routes/referencesRoutes.js";
 import projectRoutes from "./routes/projectsRoutes.js";
 import serviceRoutes from "./routes/servicesRoutes.js";
@@ -20,6 +21,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/references", referenceRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/services", serviceRoutes);
