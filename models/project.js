@@ -1,11 +1,13 @@
 import mongoose from "mongoose";
 
 const projectSchema = new mongoose.Schema({
-  firstname: String,
-  lastname: String,
-  email: String,
-  position: String,
-  company: String,
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  image: String,
+  technologies: [String],
+  link: String,
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
 });
 
 export default mongoose.model("Project", projectSchema);
