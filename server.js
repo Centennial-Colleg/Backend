@@ -25,6 +25,11 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/services", serviceRoutes);
 app.use("/api/users", userRoutes);
 
+//Root route
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 // 404 handler
 app.use((req, res, next) => {
   next(createError(404, "Route not found"));
